@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+/* الألوان الافتراضية - الوضع الداكن */
+.app-container.dark {
+  --bg-color: #0d0d0f;
+  --card-bg: #1a1a1e;
+  --text-main: #ffffff;
+  --text-dim: #b0b0b8;
+  --border: #2d2d35;
+}
+
+/* ألوان الوضع الفاتح */
+.app-container.light {
+  --bg-color: #f4f4f9;
+  --card-bg: #ffffff;
+  --text-main: #1a1a1e;
+  --text-dim: #55555c;
+  --border: #e0e0e0;
+}
+
+:root {
+  --accent: #00d2ff;
+  --gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; transition: background 0.3s, color 0.3s; }
+
+.app-container {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 8%;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo { font-size: 1.6rem; font-weight: 900; color: var(--accent); }
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links li { cursor: pointer; color: var(--text-dim); font-weight: 600; }
+.nav-links li:hover { color: var(--accent); }
+
+/* Buttons */
+.card-btn {
+  background: var(--gradient);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card-btn:active { transform: scale(0.95); } /* تأثير الضغط */
+.card-btn:hover { opacity: 0.8; box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3); }
+
+/* Hero Section */
+.hero { text-align: center; padding: 100px 20px; max-width: 900px; margin: 0 auto; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-weight: 900; }
+.gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Grid & Cards */
+.projects-section { padding: 60px 8%; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
+.card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.tag { font-size: 0.8rem; color: var(--accent); background: rgba(0, 210, 255, 0.1); padding: 5px 12px; border-radius: 50px; }
+
+.theme-toggle-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
